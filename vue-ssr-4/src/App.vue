@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<p>The visited URL is: {{ url }}</p>
-		<button @click="sayHello">Hello</button>
+		<button @click="sayHello" class="button">Hello</button>
 	</div>
 </template>
 

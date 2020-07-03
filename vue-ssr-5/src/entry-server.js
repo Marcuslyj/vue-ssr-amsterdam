@@ -1,3 +1,6 @@
+/**
+ * 根据url，创建匹配组件，并返回
+ */
 import { createApp } from './app'
 
 export default (context) => {
@@ -7,6 +10,7 @@ export default (context) => {
 
 		router.push(context.url)
 		router.onReady(() => {
+			// 匹配组件
 			const matchedComponents = router.getMatchedComponents()
 
 			// no matched routes, send back 404

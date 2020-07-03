@@ -6,6 +6,8 @@ Vue.use(Router)
 // route-level code splitting
 import Home from '../pages/index.vue'
 import About from '../pages/about.vue'
+// const Home = () => import('../pages/index.vue')
+// const About = () => import('../pages/about.vue')
 
 export function createRouter () {
   return new Router({

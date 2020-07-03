@@ -28,7 +28,7 @@
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "memory-fs": "^0.4.1",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.7.1",
     "url-loader": "^0.6.2",
     "vue-loader": "^14.1.1",
     "vue-style-loader": "^3.1.2",

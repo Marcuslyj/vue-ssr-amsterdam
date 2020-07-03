@@ -3,11 +3,14 @@ const merge = require('webpack-merge')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 const base = require('./webpack.base.config')
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const config = merge(base, {
   entry: {
     app: './src/entry-client.js'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     // strip dev-only code in Vue source
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
@@ -26,14 +29,15 @@ const config = merge(base, {
         )
       }
     }),
-    // extract webpack runtime & manifest to avoid vendor chunk hash changing
-    // on every build.
-    new webpack.optimize.CommonsChunkPlugin({
-			name: 'manifest',
-			minChunks: Infinity
-		}),
+    // // extract webpack runtime & manifest to avoid vendor chunk hash changing
+    // // on every build.
+    // new webpack.optimize.CommonsChunkPlugin({
+		// 	name: 'manifest',
+		// 	minChunks: Infinity
+		// }),
 		// This plugins generates `vue-ssr-client-manifest.json` in the
     // output directory.
+    // 这是做什么的？
     new VueSSRClientPlugin()
   ]
 })
